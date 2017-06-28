@@ -60,6 +60,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         currentArray = bizNames
         mainArray = bizNames
         
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
