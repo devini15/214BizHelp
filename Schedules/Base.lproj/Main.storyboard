@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="q4h-Zr-JmS">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Schedules" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xu4-l8-msr">
+                                <rect key="frame" x="0.0" y="0.0" width="765" height="1031"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DnX-sb-0A8">
+                                        <rect key="frame" x="0.0" y="0.0" width="765" height="1031"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="LDB-9X-lmf">
+                                                <rect key="frame" x="0.0" y="28" width="765" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LDB-9X-lmf" id="w0r-Cb-7Dq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="765" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="Qtu-8s-SRU"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="NiI-tU-suM"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qis-Jv-5j4">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="eUh-dY-2Fb">
+                            <rect key="frame" x="181" y="7" width="407" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="All"/>
+                                <segment title="Locations"/>
+                                <segment title="Independence"/>
+                                <segment title="Tasks"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="bPk-Dj-p3x"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="DnX-sb-0A8" id="bbj-ny-Nvy"/>
+                        <segue destination="WHM-cI-xVy" kind="show" identifier="showSchedule" id="GRj-MD-OPe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1191.40625" y="312.890625"/>
+        </scene>
+        <!--Schedule View Controller-->
+        <scene sceneID="Jh0-UR-QDd">
+            <objects>
+                <viewController id="zrb-IH-mh3" customClass="ScheduleViewController" customModule="Schedules" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bIQ-Zg-46P"/>
+                        <viewControllerLayoutGuide type="bottom" id="oDa-rR-amA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YYC-Gp-9fD">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Regular Schedule" translatesAutoresizingMaskIntoConstraints="NO" id="y2T-UL-OrK">
+                                <rect key="frame" x="20" y="129" width="560" height="342"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="y2T-UL-OrK" firstAttribute="top" secondItem="bIQ-Zg-46P" secondAttribute="bottom" constant="65" id="0aK-po-lRm"/>
+                            <constraint firstItem="y2T-UL-OrK" firstAttribute="leading" secondItem="YYC-Gp-9fD" secondAttribute="leadingMargin" id="Dm6-w7-2mY"/>
+                            <constraint firstItem="y2T-UL-OrK" firstAttribute="centerY" secondItem="YYC-Gp-9fD" secondAttribute="centerY" id="Uqj-2h-ubZ"/>
+                            <constraint firstItem="y2T-UL-OrK" firstAttribute="centerX" secondItem="YYC-Gp-9fD" secondAttribute="centerX" id="djr-jJ-Jkl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scheduleImageView" destination="y2T-UL-OrK" id="zgI-1R-HvE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yFY-kf-cpx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2605" y="-19"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DsV-UZ-MhD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q4h-Zr-JmS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l15-aD-bar">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="I0g-K9-bv5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Acm-v9-TMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="380" y="313"/>
+        </scene>
+        <!--Third View Controller-->
+        <scene sceneID="Vc8-rX-XZt">
+            <objects>
+                <viewController id="WHM-cI-xVy" customClass="ThirdViewController" customModule="Schedules" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iiw-CX-wqh"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Zu-7J-zxk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eZ5-ri-fpu">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kRN-Fn-gOI">
+                                <rect key="frame" x="0.0" y="0.0" width="765" height="1031"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mcv-Rv-zgw">
+                                        <rect key="frame" x="0.0" y="0.0" width="765" height="1031"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="NvX-hg-e3f">
+                                                <rect key="frame" x="0.0" y="28" width="765" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NvX-hg-e3f" id="ITb-Bb-Qee">
+                                                    <rect key="frame" x="0.0" y="0.0" width="765" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="WHM-cI-xVy" id="q8r-lb-bLP"/>
+                                            <outlet property="delegate" destination="WHM-cI-xVy" id="wqf-wO-52r"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rEk-wD-oKz">
+                        <nil key="title"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dmE-TY-e1i" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1925" y="313"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Regular Schedule" width="777" height="225"/>
+    </resources>
+</document>
